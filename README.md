@@ -2,7 +2,7 @@
 
 Based on template for games using https://github.com/evanbowman/BPCore-Engine.
 
-![Screenshot_20220801_173748](https://user-images.githubusercontent.com/403283/182187677-c3c3e488-b1c0-4e46-810c-102d6d7bba84.png)
+![screenshot](https://raw.githubusercontent.com/Mte90/LinuxDay-Rieti-2022-GBA-Demo/master/screenshot.png)
 
 
 ## TODO
