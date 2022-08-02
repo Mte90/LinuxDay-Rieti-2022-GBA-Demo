@@ -49,10 +49,6 @@ while true do
       draw_img(2, x, y, 14, 14)
    end
 
-   if rline() > 30 then
-      clear() -- framerate limit to max 30fps, by inserting another vsync.
-   end
-
    -- Ram usage
    print('RAM:' .. tostring(collectgarbage("count") * 1024):sub(1,-3) .. 'Kb', 1, 16)
    print('FPS:   ', 1, 17) -- reset print area

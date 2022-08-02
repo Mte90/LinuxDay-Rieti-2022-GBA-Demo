@@ -8,6 +8,7 @@ Based on template for games using https://github.com/evanbowman/BPCore-Engine.
 ## TODO
 
 * Migrate tile to sprite for animation
+* Understand the vsync/flickering
 * Nice music?
 
 ## Requirements
