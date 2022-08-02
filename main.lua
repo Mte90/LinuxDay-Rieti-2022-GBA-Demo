@@ -13,14 +13,6 @@ function draw_img(layer, x, y, w, h)
    end
 end
 
-function reset_previous_img(layer, x, y, w, h)
-   for yy = 0, h - 1 do
-      for xx = 0, w - 1 do
-         tile(layer, x + xx, y + yy, 1)
-      end
-   end
-end
-
 fade(0)
 
 print("Linux Day", 1, 1)
@@ -58,18 +50,17 @@ while true do
    end
 
    if btn(4) or btn(5) or btn(6) or btn(7) then
-      reset_previous_img(2, x, y, 14, 14)
       if btn(4) then
-         x = x - 1
-      elseif btn(5) then
          x = x + 1
+      elseif btn(5) then
+         x = x - 1
       elseif btn(6) then
-         y = y - 1
-      elseif btn(7) then
          y = y + 1
+      elseif btn(7) then
+         y = y - 1
       end
 
-      draw_img(2, x, y, 14, 14)
+      scroll(2, x, y)
    end
 
    if print_debug then
