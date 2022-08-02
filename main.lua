@@ -32,8 +32,31 @@ draw_img(2, 10, 2, 14, 14)
 
 x = 10
 y = 2
+print_debug = false
+change_image = false
 while true do
    clear()
+
+   -- if pressed start
+   if btnp(2) then
+      print_debug = true
+   end
+
+   -- if unpressed
+   if btnnp(2) then
+      print_debug = false
+   end
+
+   -- if pressed A
+   if btnp(0) then
+      txtr(2, "tiles/mte90.bmp")
+   end
+
+   -- if unpressed
+   if btnnp(0) then
+      txtr(2, "tiles/lug2.bmp")
+   end
+
    if btn(4) or btn(5) or btn(6) or btn(7) then
       reset_previous_img(2, x, y, 14, 14)
       if btn(4) then
@@ -49,10 +72,12 @@ while true do
       draw_img(2, x, y, 14, 14)
    end
 
-   -- Ram usage
-   print('RAM:' .. tostring(collectgarbage("count") * 1024):sub(1,-3) .. 'Kb', 1, 16)
-   print('FPS:   ', 1, 17) -- reset print area
-   print('FPS:' .. tostring(rline()), 1, 17)
+   if print_debug then
+      -- Ram usage
+      print('RAM:' .. tostring(collectgarbage("count") * 1024):sub(1,-3) .. 'Kb', 1, 16)
+      print('FPS:   ', 1, 17) -- reset print area
+      print('FPS:' .. tostring(rline()), 1, 17)
+   end
 
    display()
 end
