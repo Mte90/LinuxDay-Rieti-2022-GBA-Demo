@@ -13,6 +13,12 @@ function draw_img(layer, x, y, w, h)
    end
 end
 
+function erase_print(message, x, y)
+   for i = 0, string.len(message) do
+      tile(0, x + i, y, 1)
+   end
+end
+
 fade(0)
 
 print("Linux Day", 1, 1)
@@ -37,6 +43,8 @@ while true do
    -- if unpressed
    if btnnp(2) then
       print_debug = false
+      erase_print(1, 16, 'RAM:00000Kb')
+      erase_print(1, 17, 'FPS:0000')
    end
 
    -- if pressed A
