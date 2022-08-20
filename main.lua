@@ -43,8 +43,8 @@ while true do
    -- if unpressed
    if btnnp(2) then
       print_debug = false
-      erase_print(1, 16, 'RAM:00000Kb')
-      erase_print(1, 17, 'FPS:0000')
+      erase_print('RAM:00000Kb', 1, 16)
+      erase_print('FPS:0000', 1, 17)
    end
 
    -- if pressed A
