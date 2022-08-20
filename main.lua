@@ -31,6 +31,7 @@ draw_img(2, 10, 2, 14, 14)
 x = 10
 y = 2
 print_debug = false
+print_notice = true
 change_image = false
 while true do
    clear()
@@ -38,6 +39,11 @@ while true do
    -- if pressed start
    if btnp(2) then
       print_debug = true
+   end
+   
+   if print_notice and (btnp(4) or btnp(5) or btnp(6) or btnp(7)) then
+      print_notice = false
+      erase_print("Press arrow buttons", 1, 4)      
    end
 
    -- if unpressed
