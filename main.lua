@@ -1,5 +1,5 @@
 fade(1)
-
+flimit(30)
 txtr(0, "overlay/overlay.bmp")
 txtr(2, "tiles/lug2.bmp")
 
@@ -80,8 +80,6 @@ while true do
    if print_debug then
       -- Ram usage
       print('RAM:' .. tostring(collectgarbage("count") * 1024):sub(1,-3) .. 'Kb', 1, 16)
-      print('FPS:   ', 1, 17) -- reset print area
-      print('FPS:' .. tostring(rline()), 1, 17)
    end
 
    display()
