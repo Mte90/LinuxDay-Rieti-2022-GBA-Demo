@@ -33,6 +33,7 @@ y = 2
 print_debug = false
 print_notice = true
 change_image = false
+last_mem = nil
 while true do
    clear()
 
@@ -50,7 +51,6 @@ while true do
    if btnnp(2) then
       print_debug = false
       erase_print('RAM:00000Kb', 1, 16)
-      erase_print('FPS:0000', 1, 17)
    end
 
    -- if pressed A
@@ -77,9 +77,17 @@ while true do
       scroll(2, x, y)
    end
 
+   -- Optimized otherwise just a print it will be executed at every frame
+   -- Consuming a lot of RAM
    if print_debug then
-      -- Ram usage
-      print('RAM:' .. tostring(collectgarbage("count") * 1024):sub(1,-3) .. 'Kb', 1, 16)
+      local mem = collectgarbage("count")
+
+      if mem ~= last_mem then
+         last_mem_string = 'RAM:' .. tostring(mem * 1024):sub(1,-3) .. 'Kb'
+         last_mem = collectgarbage("count")
+      end
+
+      print(last_mem_string, 1, 16)
    end
 
    display()
